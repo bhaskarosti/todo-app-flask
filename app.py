@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
+import webview
 
 
 app = Flask(__name__)
@@ -221,4 +222,6 @@ def moveCard(name):
     return redirect(url_for('boards'))
 
 if __name__=="__main__":
-    app.run(debug=True)
+#     app.run(debug=True)
+    db.create_all()
+    webview.start()
